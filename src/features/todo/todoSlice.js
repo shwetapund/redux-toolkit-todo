@@ -23,9 +23,18 @@ export const todoSlice = createSlice({ //intial state ke andar ka ye obj hi stat
                 todo.id !== action.payload
             )
         },
+        editTodo: (state, action)=>{
+            const {text, id} = action.payload
+        
+            const edit = state.todos.find(todo=>
+                todo.id === id );
+                if(edit){
+                    edit.text = text;
+                }   
+        }
     }
 })
 
-export const {addTodo, removeTodo} = todoSlice.actions
+export const {addTodo, removeTodo, editTodo} = todoSlice.actions
 
 export default todoSlice.reducer
