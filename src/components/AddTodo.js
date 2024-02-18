@@ -34,27 +34,27 @@ import edit from "./../assets/edit.png";
     <form onSubmit={addTodoHandler} className="space-x-3 mt-12 text-center">
       <input
         type="text"
-        className="bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transiction-colors duration-200 ease-in-out"
-        placeholder="Enter a Todo.."
+        className="bg-white font-medium rounded  border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-dark py-1 px-3 leading-8 transiction-colors duration-200 ease-in-out"
+        placeholder="Enter a Todo"
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
       <button
         type="submit"
-        className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+        className="text-white bg-indigo-500 font-medium border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
       >
        {editText ? 'Edit Text' : 'Add Text'}
       </button>
     </form>
 
     <div className="text-center text-2xl font-bold mt-5">Todos</div>
-      <ul className="list-none">
+      <ul className="list-none m-5">
         {todos.map((todo) => (
           <li
-            className="mt-4 flex justify-between items-center bg-zinc-800 px-4 py-2 rounded"
+            className="mt-4 flex justify-between items-center bg-white px-4 py-2 rounded"
             key={todo.id}
           >
-            <div className="text-white">{todo.text}</div>
+            <div className="text-dark font-medium">{todo.text}</div>
             <div>
               <button
                 onClick={() => (editTodoHandler(todo.id))}
